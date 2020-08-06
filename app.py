@@ -1,11 +1,16 @@
 import random
-from flask import Flask
+import flask
+from flask import request, jsonify
 
-app = Flask(__name__)
+app = flask.Flask(__name__)
 
-@app.route("/fruit_gan/<fruit>", methods = ["GET"])
+response = [{'class': 0, 'image': img}]
+
+@app.route("/fruit_gan/<class>", methods = ["GET"])
 def fruit_gan(fruit):
-    """Returns pre-generated fruit image based on fruit Name."""
-    
-    pass
+    """Returns pre-generated fruit image based on fruit Name."""    
+        
+    return jsonify(response)
 
+
+app.run()
