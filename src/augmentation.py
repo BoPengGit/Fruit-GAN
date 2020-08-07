@@ -69,3 +69,16 @@ AUGMENT_FNS = {
     'translation': [rand_translation],
     'cutout': [rand_cutout],
 }
+
+########################### End DiffAugment Augmentation, start additional general Augmentation ###########################
+
+def flip(x: tf.Tensor, y:tf.Tensor) -> (tf.Tensor,tf.Tensor):
+    ''' Horizontal Flip Image Augmentation'''
+    x = tf.image.random_flip_left_right(x)
+    return (x,y)
+
+# FUNCTION FOR DATA AUGMENTATION
+def crop(x: tf.Tensor, y:tf.Tensor) -> (tf.Tensor,tf.Tensor):
+    ''' Random Crop for Image Augmentation'''
+    x = tf.image.random_crop(x,size=[98,98,3])
+    return (x,y)
