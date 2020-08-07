@@ -18,8 +18,8 @@ class Generator():
         x = layers.Embedding(120, 120, input_length=1,name='emb')(label)
         x = layers.Flatten()(x)
         x = layers.concatenate([seed,x])
-        x = layers.Dense(4*4*maps*8, use_bias=False)(x)
-        x = layers.Reshape((4, 4, maps*8))(x)
+        x = layers.Dense(5*5*maps*8, use_bias=False)(x)
+        x = layers.Reshape((5, 5, maps*8))(x)
         x = layers.BatchNormalization()(x)
         x = layers.ReLU()(x)
         
@@ -27,11 +27,11 @@ class Generator():
         x = layers.BatchNormalization()(x)
         x = layers.ReLU()(x)
         
-        x = layers.Conv2DTranspose(maps*2, (5, 5), strides=(2, 2), padding='same', kernel_initializer=init, use_bias=False)(x)
+        x = layers.Conv2DTranspose(maps*2, (5, 5), strides=(2, 2), kernel_initializer=init, use_bias=False)(x)
         x = layers.BatchNormalization()(x)
         x = layers.ReLU()(x)
         
-        x = layers.Conv2DTranspose(maps, (5, 5), strides=(2, 2), padding='same', kernel_initializer=init, use_bias=False)(x)
+        x = layers.Conv2DTranspose(maps, (5, 5), strides=(2, 2), kernel_initializer=init, use_bias=False)(x)
         x = layers.BatchNormalization()(x)
         x = layers.ReLU()(x)
         
@@ -53,10 +53,10 @@ class Discriminator():
         self.model = self.create() 
 
     def create(self, maps):
-        image = tf.keras.Input(shape=((64,64,3)))
+        image = tf.keras.Input(shape=((98,98,3)))
         label = tf.keras.Input(shape=((1,)))
-        x = layers.Embedding(120, 64*64, input_length=1)(label)
-        x = layers.Reshape((64,64,1))(x)
+        x = layers.Embedding(120, 98*98, input_length=1)(label)
+        x = layers.Reshape((98,98,1))(x)
         x = layers.concatenate([image,x])
         
         x = layers.Conv2D(MAPS, (5, 5), strides=(2, 2), padding='same', kernel_initializer=init, use_bias=False)(x)
@@ -79,7 +79,7 @@ class Discriminator():
         x = layers.Dense(121, activation='sigmoid')(x)
         x2 = layers.Dense(1, activation='linear')(x)
         
-        model = tf.keras.Model(inputs=[image,label], outputs=[x,x2])
+        model = tf.keras.Model(inputs=[image,label], outputs=[x, x2])
         return model
 
     def __repr__(self):
