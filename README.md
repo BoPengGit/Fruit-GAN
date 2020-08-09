@@ -4,7 +4,7 @@
 [Colab: Fruit GAN Example]() [![](https://colab.research.google.com/assets/colab-badge.svg)]()
 
 ## Model 
-AC-GAN + DiffAugment
+Custom DCGAN + Augmentation
 
 ### Pretrained Models 
 AC-GAN + DiffAugment 

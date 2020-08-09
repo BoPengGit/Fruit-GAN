@@ -63,22 +63,22 @@ def rand_cutout(x, ratio=0.5):
     x = x * tf.expand_dims(mask, axis=3)
     return x
 
+########################### End DiffAugment Augmentation, start additional general Augmentation ###########################
+
+def horizontal_flip(x):
+    ''' Horizontal Flip Image Augmentation'''
+    x = tf.image.random_flip_left_right(x)
+    return x
+
+def crop(x, image_size):
+    ''' Random Crop for Image Augmentation'''
+    x = tf.image.random_crop(x, size=[image_size,image_size,3])
+    return x
+
 
 AUGMENT_FNS = {
+    'horizontal_flip': [horizontal_flip],
     'color': [rand_brightness, rand_saturation, rand_contrast],
     'translation': [rand_translation],
     'cutout': [rand_cutout],
 }
-
-########################### End DiffAugment Augmentation, start additional general Augmentation ###########################
-
-def flip(x: tf.Tensor, y:tf.Tensor) -> (tf.Tensor,tf.Tensor):
-    ''' Horizontal Flip Image Augmentation'''
-    x = tf.image.random_flip_left_right(x)
-    return (x,y)
-
-# FUNCTION FOR DATA AUGMENTATION
-def crop(x: tf.Tensor, y:tf.Tensor) -> (tf.Tensor,tf.Tensor):
-    ''' Random Crop for Image Augmentation'''
-    x = tf.image.random_crop(x,size=[98,98,3])
-    return (x,y)

@@ -1,13 +1,12 @@
 import argparse
 import os
+import gan 
 
 class GenerateFruitsData():
 
     
     def generate_fruits_data():
-        pass 
-
-
+        predictions = generator(test_input, training=False)
 
 
 
