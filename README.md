@@ -1,4 +1,5 @@
 # Fruit GAN 
+<img src="data/static/apple_gan.png" width="1000px"/>
 
 
 ## Colab Notebook Example
