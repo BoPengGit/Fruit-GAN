@@ -7,11 +7,17 @@
 Custom DCGAN + Augmentation
 
 ### Pretrained Models 
-AC-GAN + DiffAugment 
-| Model name | Dataset |
+Custom DCGAN + Augmentation
+| Pretrained Generator Model name | Dataset |
 | --- | --- | 
-| `` | `Fruits 360` | 
+| `Apple.h5` | `Fruits 360` | 
+| `Banana.h5` | `Fruits 360` | 
+| `Cherry.h5` | `Fruits 360` | 
+| `Grape.h5` | `Fruits 360` | 
+| `Peach.h5` | `Fruits 360` | 
+| `Pear.h5` | `Fruits 360` | 
+| `Pepper.h5` | `Fruits 360` | 
+| `Tomato.h5` | `Fruits 360` | 
 
-## Output Examples 
-AC-GAN + DiffAugment:
+
   
