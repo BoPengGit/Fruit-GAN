@@ -1,5 +1,9 @@
 # Fruit GAN 
-<img src="data/static/apple_gan.png" width="1000px"/>
+
+Original Apple             |  GAN Apple
+:-------------------------:|:-------------------------:
+<img src="data/static/apple_gan.png" width="500px"/>|  <img src="data/static/apple_gan.png" width="500px"/>
+
 
 
 ## Colab Notebook Example
