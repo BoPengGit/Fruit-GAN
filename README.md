@@ -3,12 +3,9 @@
 
 [Colab: Fruit GAN Example]() [![](https://colab.research.google.com/assets/colab-badge.svg)]()
 
-## Model 
+## Pretrained Models 
 Custom DCGAN + Augmentation
-
-### Pretrained Models 
-Custom DCGAN + Augmentation
-| Pretrained Generator Model name | Dataset |
+| Pretrained Models | Dataset |
 | --- | --- | 
 | `Apple.h5` | `Fruits 360` | 
 | `Banana.h5` | `Fruits 360` | 
