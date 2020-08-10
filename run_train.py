@@ -13,6 +13,7 @@ class GenerateFruitsData():
 
 
 
+# ---------------------------------------------------------------------------- #
 
 
 
@@ -38,7 +39,7 @@ optimizer
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description='Generate Fruit Images.',
+        description='Train Fruit GAN Model.',
         formatter_class=argparse.RawDescriptionHelpFormatter)
 
     parser.add_argument('--dataset', help='Training dataset', default='cifar10')
