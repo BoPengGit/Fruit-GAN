@@ -21,7 +21,7 @@ Original Pear             |  GAN Pear
 <img src="data/static/Pear_original.png" width="300px"/>|  <img src="data/static/pear_gan.png" width="300px"/>
 
 ## Colab Notebook Example
-[Colab: Fruit GAN Notebook Example](https://colab.research.google.com/drive/1Ud0iQ8fSzxLqrSlckpdbtbDBpOpuAJsB?usp=sharing) [![](https://colab.research.google.com/drive/1Ud0iQ8fSzxLqrSlckpdbtbDBpOpuAJsB?usp=sharing)
+[Colab: Fruit GAN Notebook Example](https://colab.research.google.com/drive/1Ud0iQ8fSzxLqrSlckpdbtbDBpOpuAJsB?usp=sharing) [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Ud0iQ8fSzxLqrSlckpdbtbDBpOpuAJsB?usp=sharing)
 
 ## Current Pretrained Models 
 Custom DCGAN + Augmentation
