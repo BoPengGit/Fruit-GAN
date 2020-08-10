@@ -1,5 +1,6 @@
 import argparse
 import os
+import sys
 import tensorflow as tf 
 import gan 
 
@@ -28,5 +29,5 @@ if __name__ == "__main__":
             print('Error: unknown metric \'%s\'' % metric)
             sys.exit(1)
     
-    run(**vars(args))
+    generate_images(**vars(args))
 
