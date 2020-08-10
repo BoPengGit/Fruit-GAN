@@ -3,7 +3,7 @@
 
 Original Apple             |  GAN Apple
 :-------------------------:|:-------------------------:
-<img src="data/static/apple_gan.png" width="400px"/>|  <img src="data/static/apple_gan.png" width="400px"/>
+<img src="data/static/apple_gan.png" width="350px"/>|  <img src="data/static/apple_gan.png" width="350px"/>
 
 Original Banana             |  GAN Banana
 :-------------------------:|:-------------------------:
