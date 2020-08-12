@@ -1,35 +1,6 @@
 import tensorflow as tf 
 
 
-class ImageTFRecordDataset():
-
-    def __init__(self):
-        self.dataset = None 
-
-    def extract(self, path):
-        self.dataset = tfrecord_parallel_dataset_extract(path)
-        return self 
-
-    def transform(self, image_size, image_feature_description=None, batch_size=32, buffer_size=1000, label=None):
-        self.dataset = parallel_dataset_transform(self.dataset, 
-                                                  image_size, 
-                                                  label, 
-                                                  batch_size, 
-                                                  buffer_size, 
-                                                  image_feature_description)        
-        return self 
-
-    def extract_transform_dataset(self):
-        self.dataset = extract_transform_dataset(path, 
-                                                 dataset, 
-                                                 image_size, 
-                                                 label, 
-                                                 batch_size, 
-                                                 buffer_size, 
-                                                 image_feature_description)
-        return self.dataset
-
-
 
 def tfrecord_parallel_dataset_extract(path):
     dataset = tf.data.Dataset.list_files(path)

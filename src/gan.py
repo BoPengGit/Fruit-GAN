@@ -70,7 +70,7 @@ class DCGANDiscriminator:
     @staticmethod
     def create(image_size, maps, init):
         image = tf.keras.Input(shape=((image_size,image_size,3)))
-        x = layers.Reshape((image_size,image_size,1))(x)
+        x = layers.Reshape((image_size,image_size,1))(image)
         x = layers.concatenate([image,x])
         
         x = layers.Conv2D(maps, (5, 5), strides=(2, 2), padding='same', kernel_initializer=init, use_bias=False)(x)

@@ -1,9 +1,18 @@
 import argparse
 import os
 import sys 
-import gan 
+from src.train import Train
 
+class Config:
+    def __init__(self, **kwargs):
+        for argument, value in kwargs.items():
+            setattr(self, argument, value)
 
+    def __repr__(self):
+        repr(vars(self))
+
+    def __str__(self):
+        repr(vars(self))
 
 # ---------------------------------------------------------------------------- #
 
@@ -35,5 +44,8 @@ if __name__ == "__main__":
             print('Error: unknown metric \'%s\'' % metric)
             sys.exit(1)
     
-    run(**vars(args))
+    config = Config(**vars(args))
+    train = Train()
+    train(config)
+
 
