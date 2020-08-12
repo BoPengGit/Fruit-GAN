@@ -17,21 +17,21 @@ def DiffAugment(x, policy='', channels_first=False):
             x = tf.transpose(x, [0, 3, 1, 2])
     return x
 
-def rand_brightness(x):
+def rand_brightness(x, strength=0.25):
     magnitude = tf.random.uniform([tf.shape(x)[0], 1, 1, 1]) - 0.5
-    x = x + (magnitude * 0.25)
+    x = x + (magnitude * strength)
     return x
 
-def rand_saturation(x):
+def rand_saturation(x, strength = 0.25):
     magnitude = tf.random.uniform([tf.shape(x)[0], 1, 1, 1]) * 2
     x_mean = tf.reduce_mean(x, axis=3, keepdims=True)
-    x = (x - x_mean) * (magnitude * 0.25) + x_mean
+    x = (x - x_mean) * (magnitude * strength) + x_mean
     return x
 
-def rand_contrast(x):
+def rand_contrast(x, strength=0.25):
     magnitude = tf.random.uniform([tf.shape(x)[0], 1, 1, 1]) + 0.5
     x_mean = tf.reduce_mean(x, axis=[1, 2, 3], keepdims=True)
-    x = (x - x_mean) * (magnitude * 0.25) + x_mean
+    x = (x - x_mean) * (magnitude * strength) + x_mean
     return x
 
 def rand_translation(x, ratio=0.03):

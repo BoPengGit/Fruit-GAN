@@ -1,7 +1,5 @@
 import tensorflow as tf 
 
-
-
 def tfrecord_parallel_dataset_extract(path):
     dataset = tf.data.Dataset.list_files(path)
     dataset = dataset.interleave(tf.data.TFRecordDataset,
